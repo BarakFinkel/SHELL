@@ -43,14 +43,12 @@ If this is your first time running the program, make sure to enter the following
 #### Encode:
 
 ```sh
-  make all
   ./encode <codecA / codecB> <YourString>
 ```
 
 #### Decode:
  
 ```sh
-  make all
   ./encode <codecA / codecB> <YourString>
 ```
  
