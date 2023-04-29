@@ -11,13 +11,14 @@ void general(char* msg)
     while(*alter_msg != '\0')
     {
         if(*alter_msg >= 'A' && *alter_msg <= 'Z') *alter_msg = *alter_msg + 32;
-        if(*alter_msg >= 'a' && *alter_msg <= 'z') *alter_msg = *alter_msg - 32;
-
-        alter_msg = msg[i];
+        else if(*alter_msg >= 'a' && *alter_msg <= 'z') *alter_msg = *alter_msg - 32;
+        else;
+        
+        alter_msg = msg + i;
         i++;
     }
 }
 
-void encode(char* msg) { general(msg); }
+void encode_A(char* msg) { general(msg); }
 
-void decode(char* msg) { general(msg); }
+void decode_A(char* msg) { general(msg); }

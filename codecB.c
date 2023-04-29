@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "codecB.h"
 
-void encode(char* msg)
+void encode_B(char* msg)
 {
     if(msg == NULL) return;
 
@@ -11,12 +11,12 @@ void encode(char* msg)
     while(*alter_msg != '\0') 
     {
         *alter_msg = (*alter_msg + 3) % 256;
-        alter_msg = msg[i];
+        alter_msg = msg + i;
         i++;
     }
 }
 
-void decode(char* msg)
+void decode_B(char* msg)
 {
     if(msg == NULL) return;
 
@@ -27,7 +27,7 @@ void decode(char* msg)
     {
         *alter_msg = (*alter_msg - 3) % 256;
         
-        alter_msg = msg[i];
+        alter_msg = msg + i;
         i++;
     }
 }

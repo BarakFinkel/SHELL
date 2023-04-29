@@ -1,18 +1,36 @@
 .PHONY: clean, all
 
-all: cmp copy
+# Make all:
 
-cmp: cmp.o
-	gcc -Wall -o cmp cmp.o
+all: cmp copy codecA codecB encode decode stshell
 
-copy: copy.o
-	gcc -Wall -o copy copy.o
 
-cmp.o: cmp.c
-	gcc -Wall -c cmp.c
+# Compiling & Linking:
 
-copy.o: copy.c
-	gcc -Wall -c copy.c
+cmp: cmp.c
+	gcc -o cmp cmp.c
+
+copy: copy.c
+	gcc -o copy copy.c
+
+encode: encode.c
+	gcc -o encode encode.c -L. -lcodecA -lcodecB
+
+decode: decode.c
+	gcc -o decode decode.c -L. -lcodecA -lcodecB
+
+codecA: codecA.o codecA.h
+	gcc -c -fPIC codecA.c -o codecA.o
+	gcc -shared -o libcodecA.so codecA.o
+
+codecB: codecB.o codecB.h
+	gcc -c -fPIC codecB.c -o codecB.o
+	gcc -shared -o libcodecB.so codecB.o
+
+stshell: stshell.c
+	gcc -o stshell stshell.c
+
+# Cleaning:
 
 clean:
-	rm -f *.o cmp copy
+	rm -f *.o *.so cmp copy encode decode stshell

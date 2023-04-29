@@ -1,4 +1,4 @@
 #include <stdio.h>
 
-void encode(char* msg);
-void decode(void* msg);
+void encode_B(char* msg);
+void decode_B(char* msg);
