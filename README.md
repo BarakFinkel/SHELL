@@ -52,7 +52,7 @@ If this is your first time running the program, make sure to enter the following
   ./encode <codecA / codecB> <YourString>
 ```
  
-Part C:
+## Part C:
  
 In this part, we have implemented a simulation of a bash terminal.
 Specifically, the parts of asking our OS to execute commands, the piping of them, and the redirections of I/O from them.
