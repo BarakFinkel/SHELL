@@ -6,7 +6,7 @@ To run any part of the project, make sure to run your terminal from within the p
 
 In this part, we have implemented copy and compare tools for files.
 
-###Usage:
+### Usage:
 
 If this is your first time running the program, make sure to enter "make all" in your terminal before anything.
 
@@ -15,14 +15,15 @@ If this is your first time running the program, make sure to enter "make all" in
 ```sh
   ./copy <file1> <file2> -f -v
 ```
-*Note - -f and -v are optional flags, while -f forces the file to copy even if the target file exists, and -v simply prints verbal details.
+*Note- -f and -v are optional flags, while -f forces the file to copy even if the target file exists, and -v simply prints verbal details.
 
 #### Compare:
 
 ```sh
   ./cmp <file1> <file2> -i -v
 ```
-*Note - -i and -v are optional flags, while -i sets the comparator to ignore cases between letter chars, and -v simply prints verbal details.
+*Note- -i and -v are optional flags, while -i sets the comparator to ignore cases between letter chars, and -v simply prints verbal details.
+
 
 ## Part B:
 
@@ -46,10 +47,23 @@ If this is your first time running the program, make sure to enter the following
   ./encode <codecA / codecB> <YourString>
 ```
 
- #### Decode:
+#### Decode:
  
- ```sh
+```sh
   make all
-  ./encode
+  ./encode <codecA / codecB> <YourString>
+```
  
+Part C:
  
+In this part, we have implemented a simulation of a bash terminal.
+Specifically, the parts of asking our OS to execute commands, the piping of them, and the redirections of I/O from them.
+ 
+### Usage:
+ 
+If this is your first time running the program, make sure to enter "make all" in your terminal before anything.
+
+```sh
+  ./stshell
+```
+Afterwards, you can write naturaly as if you're writing in your normal terminal.
