@@ -9,6 +9,9 @@ In this part, we have implemented copy and compare tools for files.
 ### Usage:
 
 If this is your first time running the program, make sure to enter "make all" in your terminal before anything.
+For your comfort, we already have 3 examples of files added with the project: file1.txt, file2.txt, file3.txt
+
+*Note - file1 and file3 have the same contents when ignoring cases.
 
 #### Copy:
 
@@ -23,6 +26,7 @@ If this is your first time running the program, make sure to enter "make all" in
   ./cmp <file1> <file2> -i -v
 ```
 *Note- -i and -v are optional flags, while -i sets the comparator to ignore cases between letter chars, and -v simply prints verbal details.
+
 
 
 ## Part B:
