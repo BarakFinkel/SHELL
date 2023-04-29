@@ -4,6 +4,7 @@
 #define BUFF_SIZE 1024
 
 int verbose = 0;
+int force = 0;
 
 int main(int argc, char *argv[])
 {
@@ -22,11 +23,13 @@ int main(int argc, char *argv[])
     for(int i=3 ; i < argc ; i++)
     {
         if (!strcmp(argv[i], "-v")) { ( verbose = 1 ); }
+        else if(!strcmp(argv[i], "-f")) { ( force = 1 ); }
         else 
         { 
             if(verbose) { printf("Error: General failure. Exiting Program.\n"); } 
             return 1; 
         }
+        
     }
 
     // We set file pointers to the files given by the user.
@@ -44,7 +47,7 @@ int main(int argc, char *argv[])
 
     // If the target_file is not NULL, we know that it already exists.
     // Therefore, we (
-    if(target_file != NULL)
+    if(target_file != NULL && !force)
     {
         if(verbose) { printf("Error: Target file exists. Exiting program.\n"); }
         fclose(src_file);

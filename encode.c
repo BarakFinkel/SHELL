@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
 {
     // In order to ensure that the libraries in the project's directory are loaded first,
     // we run the following command:
-    system("export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:.");
+    system("export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH");
 
     // If the user did not execute the program correctly, we throw an error message and return 1.
     if(argc != 3)

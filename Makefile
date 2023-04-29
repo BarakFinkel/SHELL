@@ -1,11 +1,13 @@
-.PHONY: clean, all
+.PHONY: clean, all, exp
 
 # Make all:
 
-all: cmp copy codecA codecB encode decode stshell
-
+all: cmp copy codecA codecB exp encode decode stshell
 
 # Compiling & Linking:
+
+exp:
+	export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH
 
 cmp: cmp.c
 	gcc -o cmp cmp.c
